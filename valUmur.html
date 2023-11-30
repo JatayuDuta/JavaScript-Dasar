@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/98d67327d3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Validasi Umur</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        .bungkus{
+            margin: 30px auto;
+            width: 70%;
+            height: auto;
+            background-color: #ffffff60;
+            border: none;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        form{
+            width: 100%;
+        }
+        h1{
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .teks-fill{
+            width: 100%;
+            background-color: #ff000060;
+            font-size: 20px;
+        }
+        #hari, #bulan{
+            width: 20%;
+            margin: 0px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+        #tahun{
+            width: 40%;
+            padding: 10px;
+            margin: 10px auto;
+        }
+        #submit{
+            width: 81%;
+            padding: 10px;
+            background-color: #ff0000cd;
+            margin-top: 10px;
+            cursor: pointer;
+            color: black;
+            border: none;
+            font-size: 17px;
+        }
+        #hasil{
+            margin: 20px auto;
+            width: 81%;
+            padding: 17px;
+            font-size: 30px;
+            color: black;
+        }
+        #submit:hover{
+            background-color: #ff0000a7;
+            color: black;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Jatayu Duta's</label>
+        <ul>
+            <li><a href="index.html">Kalkulator</a></li>
+            <li><a class="active" href="valUmur.html">Validasi Umur</a></li>
+            <li><a href="deretFibo.html">Deret Fibonacci</a></li>
+            <li><a href="kalBMI.html">Kalkulator BMI</a></li>
+            <li><a href="tekateki.html" target="_blank">Teka-Teki Kata</a></li>
+        </ul>
+    </nav>
+
+    <div class="bungkus">
+        <h1>validasi usia anda</h1>
+        <form method="post" class="btn-submit" class="teks-fill">
+            <input id="hari" type="number" name="fhari" placeholder="DD" autofocus>
+            <input id="bulan" type="number" name="fbulan" placeholder="MM">
+            <input id="tahun" type="number" name="ftahun" placeholder="YYYY"><br>
+        </form>
+        <button id="submit" type="submit" value="Submit" onclick="result()">Submit</button>
+        <p id="hasil"></p>
+    </div>
+        
+    <script>
+        function result() {
+            let x = document.getElementById("tahun").value;
+            let z = document.getElementById("bulan").value;
+            let v = document.getElementById("hari").value;
+            let y = new Date().getFullYear();
+            if(!x && !z && !v) {
+                alert("masukkan tanggal lahir anda dahulu");
+                return;
+            } 
+              
+            let age = y - x
+            if(age < 18){
+                alert("maaf usia anda dibawah 18th");
+                return;
+            } else if(age >= 18){
+              document.getElementById("hasil").innerHTML = "Usia anda " + age + " tahun<br>Silahkan buat akun";
+              return; 
+              document.getElementById("hasil").innerHTML = ""
+            }
+        }
+    </script>
+
+    <footer>
+        <p><i>copyright</i> | Jatayu Duta Nugraha</p>
+    </footer>
+
+</body>
+</html>

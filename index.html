@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <title>Kalkulator</title>
+    <script src="https://kit.fontawesome.com/98d67327d3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Jatayu Duta's</label>
+        <ul>
+            <li><a class="active" href="index.html">Kalkulator</a></li>
+            <li><a href="valUmur.html">Validasi Umur</a></li>
+            <li><a href="deretFibo.html">Deret Fibonacci</a></li>
+            <li><a href="kalBMI.html">Kalkulator BMI</a></li>
+            <li><a href="tekateki.html" target="_blank">Teka-Teki Kata</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="display.value = '' " class="operator">
+                    <input type="button" value="DEL" onclick="display.value = display.value.toString().slice(0,-1)" class="operator">
+                    <input type="button" value="." onclick="display.value += '.' " class="operator">
+                    <input type="button" value="/" onclick="display.value += '/' " class="operator">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="display.value += '7' " id="key-numb">
+                    <input type="button" value="8" onclick="display.value += '8' " id="key-numb">
+                    <input type="button" value="9" onclick="display.value += '9' " id="key-numb">
+                    <input type="button" value="*" onclick="display.value += '*' " class="operator">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="display.value += '4' " id="key-numb">
+                    <input type="button" value="5" onclick="display.value += '5' " id="key-numb">
+                    <input type="button" value="6" onclick="display.value += '6' " id="key-numb">
+                    <input type="button" value="-" onclick="display.value += '-' " class="operator">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="display.value += '1' " id="key-numb">
+                    <input type="button" value="2" onclick="display.value += '2' " id="key-numb">
+                    <input type="button" value="3" onclick="display.value += '3' " id="key-numb">
+                    <input type="button" value="+" onclick="display.value += '+' " class="operator">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="display.value += '00' " id="key-numb">
+                    <input type="button" value="0" onclick="display.value += '0' " id="key-numb">
+                    <input class="equal" type="button" value="=" onclick="display.value=eval(display.value)">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p><i>copyright</i> | Jatayu Duta Nugraha</p>
+    </footer>
+    
+</body>
+</html>
